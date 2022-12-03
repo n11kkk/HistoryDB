@@ -10,7 +10,10 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         OnClear(this, null);
         BindingContext = h;
+       
     }
+
+
 
     async Task<string> Docal()
     {
@@ -45,6 +48,7 @@ public partial class MainPage : ContentPage
             //a.Expression = $"{currentEntry1} = {responseString}";
             //HistoryPage.HistoryGlobal.Expression.Add(HistoryRes);
             //HistoryPage.HistoryGlobal.Result.Add(responseString);
+            ViewModels.HistoryViewModel.AddExpr($"{currentEntry1} = {responseString}");
 
             //mod.Add(a.Expression);
             return responseString.ToString();

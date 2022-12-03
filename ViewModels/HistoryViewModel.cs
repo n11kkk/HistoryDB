@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using Calculator.Models;
 using Calculator.Services;
+using System.Runtime.Versioning;
 
 namespace Calculator.ViewModels
 {
@@ -31,6 +32,7 @@ namespace Calculator.ViewModels
             ObservableCollection<HistoryModel> result = await HistoryService.GetExpr();
 
             System.Diagnostics.Debug.WriteLine("THESE ARE THE EXPRESSIONS", result);
+
 
         }
 

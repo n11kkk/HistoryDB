@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.HistoryPage"
              xmlns:viewmodel="clr-namespace:Calculator.ViewModels"
-             x:DataType="viewmodel:HistoryViewModel"
+            
              >
-    <VerticalStackLayout BackgroundColor="{DynamicResource NavigationBarColor}">
-        <Label 
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="{DynamicResource NavigationBarColor}">
+            <Label 
                Text="History"
                FontSize="36"
                LineBreakMode="NoWrap"
@@ -14,16 +15,18 @@
                HorizontalOptions="Center"
             Style="{StaticResource LargeLabelStyle}"
             TextColor="{DynamicResource EqualToColor}"/>
-        
-        <ListView ItemsSource="{Binding Expr}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label TextColor="{DynamicResource TertiaryTextColor}" Text="{Binding .}"  FontSize="Large"/>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </VerticalStackLayout>
 
+            <Button Text="Load Data" TextColor="{DynamicResource EqualToColor}" Clicked="OnGetAllExprClicked"></Button>
+
+            <ListView x:Name="historyList" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label TextColor="{DynamicResource TertiaryTextColor}" Text="{Binding Expr}"  FontSize="Large"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage> 
