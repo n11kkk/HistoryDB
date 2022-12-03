@@ -15,6 +15,7 @@ public partial class HistoryPage : ContentPage
         BindingContext = h;
     }
 
+  
     public async void getAllExpr()
     {
 
@@ -33,6 +34,12 @@ public partial class HistoryPage : ContentPage
         //MainViewModel.toBeAdded = $" => {count} This is added";
 
         //      MainViewModel.expressions.Add(x);
+        getAllExpr();
+    }
+
+    public async void OnDeleteExprClicked(object sender, EventArgs e)
+    {
+        await HistoryService.DeleteExprs();
         getAllExpr();
     }
 }
