@@ -16,7 +16,8 @@
             Style="{StaticResource LargeLabelStyle}"
             TextColor="{DynamicResource EqualToColor}"/>
 
-            <Button Text="Load Data" TextColor="{DynamicResource EqualToColor}" Clicked="OnGetAllExprClicked"></Button>
+
+            
 
             <ListView x:Name="historyList" >
                 <ListView.ItemTemplate>
@@ -27,6 +28,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Clear Data"  VerticalOptions="Center" TextColor="{DynamicResource EqualToColor}"  FontSize="Medium" Style="{StaticResource ButtonStyle}" Clicked="OnDeleteExprClicked"></Button>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage> 
