@@ -1,6 +1,4 @@
-﻿
-
-using Calculator.ViewModels;
+﻿using Calculator.ViewModels;
 
 namespace Calculator;
 

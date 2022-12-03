@@ -4,7 +4,7 @@
              x:Class="Calculator.ComplexMathPage"
              xmlns:viewmodel="clr-namespace:Calculator.ViewModels"
              x:DataType="viewmodel:HistoryViewModel">
-    
+
     <Grid Padding="16" RowSpacing="2" ColumnSpacing="2"
           RowDefinitions="2*,*,*,*,*,*"
           ColumnDefinitions="*,*,*,*,*" BackgroundColor="{DynamicResource NavigationBarColor}">

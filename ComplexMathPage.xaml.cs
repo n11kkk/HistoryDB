@@ -1,10 +1,13 @@
-﻿namespace Calculator;
+﻿using Calculator.ViewModels;
+
+namespace Calculator;
 
 public partial class ComplexMathPage : ContentPage
 {
-    public ComplexMathPage()
+    public ComplexMathPage(HistoryViewModel h)
     {
         InitializeComponent();
+        BindingContext = h;
         OnClear(this, null);
     }
     async Task<string> Docal()
@@ -34,6 +37,7 @@ public partial class ComplexMathPage : ContentPage
         {
             System.Diagnostics.Debug.WriteLine(responseString);
             this.currentCalculation1.Text = responseString;
+            ViewModels.HistoryViewModel.exprString = $"{this.resultText1.Text} = {responseString}";
             return responseString.ToString();
         }
 
