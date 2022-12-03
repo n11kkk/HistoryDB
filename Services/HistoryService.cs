@@ -44,10 +44,11 @@ namespace Calculator.Services
             }
 
         }
-        public static async Task RemoveExpr(int id)
+
+        public static async Task DeleteExprs()
         {
             await Init();
-            await db.DeleteAsync<HistoryModel>(id);
+            await db.DeleteAllAsync<HistoryModel>();
         }
 
         public static async Task<ObservableCollection<HistoryModel>> GetExpr()
