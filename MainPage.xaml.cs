@@ -5,15 +5,15 @@ namespace Calculator;
 public partial class MainPage : ContentPage
 {
     
-    public MainPage(HistoryViewModel h)
+    public MainPage(HistoryViewModel h,HistoryPage hp)
     {
         InitializeComponent();
         OnClear(this, null);
         BindingContext = h;
-       
+        histp = hp;
     }
 
-
+    public HistoryPage histp;
 
     async Task<string> Docal()
     {
@@ -49,6 +49,7 @@ public partial class MainPage : ContentPage
             //HistoryPage.HistoryGlobal.Expression.Add(HistoryRes);
             //HistoryPage.HistoryGlobal.Result.Add(responseString);
             ViewModels.HistoryViewModel.AddExpr($"{currentEntry1} = {responseString}");
+            histp.getAllExpr();
 
             //mod.Add(a.Expression);
             return responseString.ToString();
